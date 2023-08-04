@@ -35,6 +35,8 @@ const port = process.env.PORT || 3000
 
 const start = async () => {
   try {
+    console.log(MONGO_USER)
+    console.log(MONGO_PASSWORD)
     await connectDB(`mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_IP}:${MONGO_PORT}/?authSource=admin`)
     await redisClient.connect()
       .then(() => console.info('redis connected'))
