@@ -4,7 +4,6 @@ const protect = (req, res, next) => {
     return res.status(401).json({ status: 'fail', msg: 'unauthorized' })
   }
   req.user = user
-  console.log(user)
   next()
 }
 
