@@ -25,6 +25,9 @@ app.use(session({
 }))
 app.use(express.json())
 
+app.use('/api/v1/healthCheck', (req, res) => {
+  res.status(200).send('Hi there')
+})
 app.use('/api/v1/posts', postRouter)
 app.use('/api/v1/auth', authRouter)
 
